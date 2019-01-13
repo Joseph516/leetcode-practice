@@ -12,4 +12,8 @@
 
    一个整数可以被分解为多个整数的乘积，例如，6 可以分解为 2x3。求给定整数的所有解。
 
-5. [用递归法实现排列组合](permutation.cpp)
+5. [用递归法实现排列](permutation.cpp)
+
+6. [用递归法实现组合](combination.cpp)
+
+7. [动态规划问题](dynamic_programming.md)
