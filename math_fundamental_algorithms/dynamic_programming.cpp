@@ -7,7 +7,7 @@ using namespace std;
 
 class DynamicProgramming {
   private:
-  vector<int> money = {1, 2, 3, 7}; // 纸币种类
+  vector<int> money = {1, 2, 3, 7};  // 纸币种类
   vector<int> amountMethod = {0};
 
   public:
@@ -17,31 +17,39 @@ class DynamicProgramming {
      * return: 
      */
   int findFewerstMethod(int amountMoney) {
-    if (amountMoney == 0) {
-      amountMethod[0] = 0;
-    }
-    int tempMin = amountMoney;
-    int temp;
-    for (unsigned int i = 0; i < money.size(); i++) {
-      int diff = amountMoney - money[i];
-      if (0 <= diff) {
-        temp = findFewerstMethod(diff) + 1;
-      } else {
-        temp = ;
+    int c[amountMoney];
+    int temp[4];
+    c[0] = 0;
+    c[1] = 1;
+
+    for (unsigned int i = 2; i < amountMoney; i++) {
+      for (unsigned int j = 0; j < money.size(); j++) {
+        int diff = i - money[j];
+        if (0 <= diff) {
+          temp[j] = c[diff] + 1;
+        } else {
+          // 表示该纸币无效，选择某较大值。
+          temp[j] = amountMoney;
+        }
       }
-      if (temp < tempMin) {
-        tempMin = temp;
+      // 求出最小值
+      int tempMin = temp[0];
+      for (int i = 1; i < 4; i++) {
+        if (temp[i] < tempMin) {
+          tempMin = temp[i];
+        }
       }
+      c[i] = tempMin;
     }
-    amountMethod[i] = tempMin;
-    return amountMethod[i];
+
+    return c[amountMoney-1];
   }
 };
 
 // test
 int main(void) {
   DynamicProgramming test;
-  int res = test.findFewerstMethod(50);
+  int res = test.findFewerstMethod(100);
   cout << res << endl;
 
   return 0;
