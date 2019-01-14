@@ -6,43 +6,40 @@
 using namespace std;
 
 class DynamicProgramming {
-  private:
+ private:
   vector<int> money = {1, 2, 3, 7};  // 纸币种类
-  vector<int> amountMethod = {0};
 
-  public:
+ public:
   /**
-     * Description: 对于金额固定，找出最少钱币数及方式。
-     * prams: amountMoney- 输入总金额
-     * return: 
-     */
+   * Description: 对于金额固定，找出最少钱币数及方式。
+   * prams: amountMoney- 输入总金额
+   * return: 所需最小纸币数
+   */
   int findFewerstMethod(int amountMoney) {
     int c[amountMoney];
-    int temp[4];
     c[0] = 0;
-    c[1] = 1;
 
-    for (unsigned int i = 2; i < amountMoney; i++) {
+    int temp;
+    for (unsigned int i = 1; i < amountMoney; i++) {
+      // 用最大值初始化
+      int tempMin = amountMoney;
       for (unsigned int j = 0; j < money.size(); j++) {
         int diff = i - money[j];
         if (0 <= diff) {
-          temp[j] = c[diff] + 1;
+          temp = c[diff] + 1;
         } else {
-          // 表示该纸币无效，选择某较大值。
-          temp[j] = amountMoney;
+          // 此情况表示该纸币无效，选择最大值。
+          temp = amountMoney;
         }
-      }
-      // 求出最小值
-      int tempMin = temp[0];
-      for (int i = 1; i < 4; i++) {
-        if (temp[i] < tempMin) {
-          tempMin = temp[i];
+        // 求出最小值
+        if (temp < tempMin) {
+          tempMin = temp;
         }
       }
       c[i] = tempMin;
     }
 
-    return c[amountMoney-1];
+    return c[amountMoney - 1];
   }
 };
 
