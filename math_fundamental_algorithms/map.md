@@ -23,7 +23,7 @@ A-B三条路，但是用时（权重）不一样。
 1. 查找最小的mw，并将对应结点加入Finish。
 
 2. 更新权重
-  ![1548222968453](assets/1548222968453.png)
+    ![1548222968453](assets/1548222968453.png)
 
   
 
@@ -43,23 +43,41 @@ A-B三条路，但是用时（权重）不一样。
 
 ### 算法实现
 
-PseudoCode
+[PseudoCode](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
 ```pseudocode
 function Dijkstra(Graph, source):
-  create vertex set F
-  // init
-  for each vertex v in Graph:
-    if unknow distance:
-      dist[v]:inf
-    else：
-      dist[v]:distance
-   dist[source]:0
-   F.add(source)
-   
-   while F.size() < vertex num:
-     
+ 
+   create vertex set Q
+
+   for each vertex v in Graph:           // Initialization
+     dist[v] ← INFINITY                  // Unknown distance from source to v
+     prev[v] ← UNDEFINED                 // Previous node in optimal path from source
+     add v to Q                          // All nodes initially in Q (unvisited nodes)
+ 
+   dist[source] ← 0                      // Distance from source to source
+      
+   while Q is not empty:
+     u ← vertex in Q with min dist[u]    // Node with the least distance
+                                         // will be selected first
+     remove u from Q 
+         
+     for each neighbor v of u:           // where v is still in Q.
+       alt ← dist[u] + length(u, v)
+       if alt < dist[v]:                 // A shorter path to v has been found
+         dist[v] ← alt 
+         prev[v] ← u 
+
+    return dist[], prev[]
 ```
 
+[C++ 实现](dijkstra.cpp)
 
+1. 先创建带权值的单向图
+
+   邻接表：
+
+   ![1548561458012](assets/1548561458012.png)
+
+2. 再使用Dijkstra搜索图
 

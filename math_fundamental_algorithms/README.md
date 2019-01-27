@@ -18,3 +18,11 @@
 
 7. [动态规划问题](dynamic_programming.md)
 
+8. [树的深度搜索](tree_depth_first_search.cpp)
+
+9. [树的广度搜索](tree_breadth_first_search.md)
+
+10. [图搜索算法：Dijkstra单源最短路径搜索算法](map.md)
+
+    
+

@@ -94,6 +94,8 @@ DfsFile(base);
 
 采用DFS和BFS遍历ubuntu指定目录下的所有文件。
 
+DFS和BFS的变换通过更改stack和queue。
+
 [代码实现](tree_breadth_first_search.cpp)
 
 ```shell
