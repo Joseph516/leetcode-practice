@@ -1,5 +1,8 @@
 # 算法数学
 ## 目录
+
+### 基础数学
+
 1. [迭代法计算平方根](iteration_way.cpp)
 
 2. [数学归纳法计算舍汗王赏麦](math_induction.cpp)
@@ -24,5 +27,9 @@
 
 10. [图搜索算法：Dijkstra单源最短路径搜索算法](map.md)
 
-    
+###　概率与统计
+
+1. [概率分布介绍](probability_distribution.md)
+
+
 
