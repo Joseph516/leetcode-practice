@@ -31,5 +31,11 @@
 
 1. [概率分布介绍](probability_distribution.md)
 
+2. [朴素贝叶斯理论](naive_bayesian)
+
+   朴素贝叶斯应用的2个案例：水果分类，新闻文本分类
+
+3. 隐氏马尔科夫链表
+
 
 
