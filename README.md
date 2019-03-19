@@ -4,8 +4,9 @@
 ## Quick Start
 - finished：完成试题代码及部分note文档。
 - unfinished：暂未完成或赞未理解的试题。
-- math_fundamental_algorithms: 算法涉及的数学知识及代码。
+- math_fundamental_algorithms: 算法涉及的数学知识，机器学习及代码。
 
 ## 参考
 - [leetcode-cli]( https://github.com/skygragon/leetcode-cli) 
+- [程序员的数学课](https://time.geekbang.org/column/143)
 
