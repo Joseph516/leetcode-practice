@@ -30,3 +30,4 @@ Gain(P,T) = Entropy(P) - \sum_{v\in value(T)} \frac{P(v)}{P}*Entropy(P(v))
 $$
 T对应为某一特征，当信息增益越大，则特征拆分效果越明显。
 
+
