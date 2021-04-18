@@ -1,4 +1,4 @@
-# 算法数学
+# 算法与数学
 ## 目录
 
 ### 基础数学
@@ -26,6 +26,8 @@
 9. [树的广度搜索](tree_breadth_first_search.md)
 
 10. [图搜索算法：Dijkstra单源最短路径搜索算法](map.md)
+
+11. [回溯算法](backtracking.md)  // TODO: 待完善
 
 ### 概率与统计
 

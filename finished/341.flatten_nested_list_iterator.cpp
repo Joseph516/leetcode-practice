@@ -67,7 +67,7 @@ class NestedIterator {
       vector<NestedInteger> new_list;
       new_list.assign(iter_tmp, nested_list.end());
       NestedIterator j(new_list);
-      *_iter = *(j._iter);  // FIXME: 无法将_iter对应的值赋值为vector形式，需要重载=运算符。
+      *_iter = *(j._iter);  // 无法将_iter对应的值赋值为vector形式，需要重载=运算符。
     } else {
       _iter++;
     }
