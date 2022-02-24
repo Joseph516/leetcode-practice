@@ -329,6 +329,8 @@ p.pop();
 
 ### String `std::string`
 
+// TODO：增加字符串分割拆分等操作
+
 ```cpp
 // --- transform char using #include <string.h>
 toupper(s[i], locale());

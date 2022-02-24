@@ -1,6 +1,10 @@
+# default
 *.out
 debug
 .DS_Store
 .idea/
 .vscode/
 [cC][mM]ake*
+
+# custom
+/unfinished/
