@@ -1,21 +1,21 @@
 # Leetcode Note
 
-主要记录leetcode练习过程中需要的题目，数学知识，以及对应的思考与笔记。
+主要记录 leetcode 练习过程中需要的题目，数学知识，以及对应的思考与笔记。
+
 ## Quick Start
 
-- [finished](finished/)：完成试题代码及部分note文档。
-  
+- [finished](finished/)：完成试题代码及部分 note 文档。
 - [unfinished](unfinished/)：暂未完成或暂时未理解的试题。
 
-- [剑指offer(第2版)-Go/C++语言实现](剑指offer(第2版))
+- [剑指 offer(第 2 版)-Go/C++语言实现](<剑指offer(第2版)>)
 
 - [algorithms](algorithms/README.md): 学习笔记及个人代码实现
 
   - 基础数学知识及数据结构，包括递归与归纳，动态规划，树和图的搜索等。
 
-  - 概率与统计，包括马尔科夫模型，nlp等
+  - 概率与统计，包括马尔科夫模型，nlp 等
 
-  - 线性代数：矩阵，线性回归和pca降维等。
+  - 线性代数：矩阵，线性回归和 pca 降维等。
 
 ## C++常见库
 
@@ -65,7 +65,7 @@ v.clear();
 
 ### Deque `std::deque`
 
-双端队列，与vector类似，但`push_front`和`pop_front`效率更高。
+双端队列，与 vector 类似，但`push_front`和`pop_front`效率更高。
 
 ```cpp
 #include <deque>
@@ -104,7 +104,7 @@ d.clear();
 
 ### List `std::list` and `std::forward_list`
 
-list为双向链表，forward_list为单向链表，排序高效。
+list 为双向链表，forward_list 为单向链表，排序高效。
 
 ```cpp
 #include <list>
@@ -169,7 +169,7 @@ l.reverse();
 
 ### Map `std::map` and `std::unordered_map`
 
-Maps通常由二叉搜索树（二叉排序树）实现。
+Maps 通常由二叉搜索树（二叉排序树）实现。
 
 ```cpp
 #include <map>
@@ -300,7 +300,7 @@ q.pop();
 
 ### Priority Queue `std::priority_queue`
 
-优先级队列，可以由vector实现。
+优先级队列，可以由 vector 实现。
 
 ```cpp
 #include<queue>
@@ -327,6 +327,27 @@ p.pop();
 
 堆。大顶堆和小顶堆，优先级队列的应用之一。
 
+```c++
+#include <algorithm>
+
+std::vector<int> v { 3, 1, 4, 1, 5, 9 };
+// 大顶堆
+std::make_heap(v.begin(), v.end());
+// 小顶堆
+std::make_heap(v1.begin(), v1.end(), std::greater<>{});
+
+// 加入元素，此时堆没有排序
+v.push_back(6);
+// 堆排序
+std::push_heap(v.begin(), v.end());
+
+// 移动最大元素到结尾
+std::pop_heap(v.begin(), v.end());
+// 实际移出最大元素
+v.pop_back();
+
+```
+
 ### String `std::string`
 
 // TODO：增加字符串分割拆分等操作
@@ -340,12 +361,12 @@ tolower(s[i], locale());
 fill_n(nums, sizeof(nums), true);
 
 // --- transform string using #include <algorithm>
-transform(word.begin(), word.end(), word.begin(), ::tolower);   
+transform(word.begin(), word.end(), word.begin(), ::tolower);
 transform(word.begin(), word.end(), word.begin(), ::toupper);
 
 // --- use ignore after using cin
 cin.ignore();   // Extracts chars from the input sequence and discards them.
-getline(cin, line);     
+getline(cin, line);
 
 // --- use #include <sstream>
 getline(cin, line);
@@ -395,6 +416,5 @@ str.replace(str.find(needle), needle.length(), "replace");
 
 ### others
 
-- [leetcode-cli]( https://github.com/skygragon/leetcode-cli) 
+- [leetcode-cli](https://github.com/skygragon/leetcode-cli)
 - [程序员的数学课](https://time.geekbang.org/column/143)
-
